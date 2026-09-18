@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tomorrow Gym OS — Personal</title>
+<style>
+:root{--bg:#090b10;--panel:#10151d;--panel2:#141a24;--line:rgba(255,255,255,.08);--text:#f4f7fb;--muted:#8e98a8;--accent:#7c5cff;--green:#63d9bd;--yellow:#ffcb66;--red:#ff6b7a;--blue:#68a7ff;--radius:18px}
+*{box-sizing:border-box}body{margin:0;height:100vh;overflow:hidden;background:radial-gradient(circle at 85% -10%,rgba(124,92,255,.14),transparent 30%),#090b10;color:var(--text);font:13px Inter,system-ui,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:flex;height:100%}.side{width:252px;min-width:252px;height:100%;min-height:0;background:rgba(9,11,16,.9);border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable}.side::-webkit-scrollbar{width:7px}.side::-webkit-scrollbar-thumb{background:#242a35;border-radius:10px}.side::-webkit-scrollbar-track{background:transparent}.brand{display:flex;gap:10px;align-items:center;padding:4px 8px 25px}.mark{width:35px;height:35px;border-radius:11px;background:linear-gradient(135deg,#8f76ff,#5a39ef);display:grid;place-items:center;font-weight:900;box-shadow:0 8px 24px rgba(124,92,255,.3)}.brand b{font-size:13px}.brand small{display:block;color:#657080;font-size:9px;letter-spacing:.11em;text-transform:uppercase;margin-top:3px}.label{color:#5f6877;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;padding:10px}.nav{display:flex;flex-direction:column;gap:3px}.nav button{border:0;background:none;color:#aeb6c4;text-align:left;padding:10px 11px;border-radius:11px}.nav button:hover{background:rgba(255,255,255,.04);color:#fff}.nav button.active{background:rgba(124,92,255,.13);color:#fff}.spacer{flex:1}.account{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:14px;padding:11px}.account-row{display:flex;gap:9px;align-items:center}.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#29344a,#1a2130);display:grid;place-items:center;font-weight:800;font-size:11px}.account b{display:block;font-size:11px}.account span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.logout{width:100%;margin-top:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#aeb6c4;padding:8px;border-radius:9px;font-size:10px}.main{min-width:0;flex:1;display:flex;flex-direction:column}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 25px;background:rgba(9,11,16,.68);backdrop-filter:blur(16px)}.crumb{color:var(--muted);font-size:11px}.crumb b{color:#fff}.top-right{display:flex;gap:8px;align-items:center}.search{width:240px;height:37px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:10px;padding:0 10px;display:flex;align-items:center;gap:8px;color:var(--muted)}.search input{width:100%;border:0;outline:0;background:none;color:#fff;font-size:11px}.content{padding:26px;overflow:auto;flex:1;min-height:0;min-width:0}.view{display:none;animation:in .18s ease}.view.active{display:block}@keyframes in{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:none}}.head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:20px}.head .kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);font-weight:900;margin-bottom:7px}.head h1{margin:0;font-size:28px;letter-spacing:-.04em}.head p{margin:6px 0 0;color:var(--muted);font-size:12px}.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#dfe5ed;border-radius:10px;padding:9px 12px;font-size:11px;font-weight:800}.btn.primary{background:var(--accent);border-color:transparent;color:#fff}.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,23,33,.95),rgba(13,17,24,.95));border-radius:var(--radius);overflow:hidden}.pad{padding:18px}.stat{padding:16px 18px}.stat small{color:var(--muted);font-size:10px}.stat strong{display:block;font-size:28px;letter-spacing:-.05em;margin:8px 0 4px}.delta{font-size:10px;color:var(--green)}.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.title h3{margin:0;font-size:13px}.title span{font-size:10px;color:var(--muted)}.table{width:100%;border-collapse:collapse;font-size:11px}.table th{color:#697384;font-size:9px;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:10px 13px;border-bottom:1px solid var(--line)}.table td{padding:12px 13px;border-bottom:1px solid rgba(255,255,255,.05)}.table tr:last-child td{border-bottom:0}.person{display:flex;gap:9px;align-items:center}.person .avatar{width:29px;height:29px}.person b{font-size:11px}.person small{display:block;color:var(--muted);font-size:9px;margin-top:2px}.badge{display:inline-flex;padding:5px 8px;border-radius:999px;font-size:9px;font-weight:800}.green{color:#75e2b2;background:rgba(85,212,155,.08);border:1px solid rgba(85,212,155,.16)}.yellow{color:#ffd68a;background:rgba(255,203,102,.08);border:1px solid rgba(255,203,102,.14)}.red{color:#ff9ca7;background:rgba(255,107,122,.08);border:1px solid rgba(255,107,122,.14)}.purple{color:#b19fff;background:rgba(124,92,255,.1);border:1px solid rgba(124,92,255,.16)}.blue{color:#91bdff;background:rgba(104,167,255,.08);border:1px solid rgba(104,167,255,.14)}.list{display:flex;flex-direction:column}.item{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)}.item:last-child{border:0}.itemmain{flex:1}.itemmain b{display:block;font-size:11px}.itemmain span{display:block;color:var(--muted);font-size:9px;margin-top:3px;line-height:1.45}.progress{height:7px;background:#212732;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#a98cff);border-radius:99px}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.exercise{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);background:rgba(255,255,255,.018);border-radius:11px;margin-bottom:8px}.exicon{width:36px;height:36px;border-radius:9px;background:rgba(124,92,255,.1);display:grid;place-items:center;color:#b29fff}.exmain{flex:1}.exmain b{font-size:11px}.exmain span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.exmeta{text-align:right}.exmeta b{font-size:11px}.exmeta span{display:block;color:var(--muted);font-size:9px;margin-top:2px}.chat{height:470px;display:flex;flex-direction:column}.messages{flex:1;overflow:auto;padding:16px}.msg{max-width:78%;padding:10px 12px;border-radius:11px;margin-bottom:8px;font-size:10px;line-height:1.55}.msg.ai{background:#171d28;border:1px solid var(--line)}.msg.me{margin-left:auto;background:rgba(124,92,255,.17);border:1px solid rgba(124,92,255,.22)}.compose{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}.input,.select{height:38px;background:#0c1016;border:1px solid var(--line);border-radius:9px;color:#fff;outline:0;padding:0 10px;font-size:10px}.input{width:100%}.compose .input{flex:1}.notice{padding:13px;border:1px solid rgba(104,167,255,.17);background:rgba(104,167,255,.05);border-radius:11px;color:#a9c6ef;font-size:10px;line-height:1.5}.modalback{display:none;position:fixed;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(7px);z-index:50;align-items:center;justify-content:center;padding:20px}.modalback.show{display:flex}.modal{width:min(720px,100%);max-height:90vh;overflow:auto;background:#10151e;border:1px solid var(--line);border-radius:18px}.modalhead{padding:15px 17px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modalhead b{font-size:13px}.modalbody{padding:17px}.modalfoot{padding:12px 17px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px}.close{border:1px solid var(--line);background:rgba(255,255,255,.03);color:#ccd4df;width:31px;height:31px;border-radius:8px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;color:#798495;text-transform:uppercase;font-size:9px;letter-spacing:.1em;font-weight:800;margin-bottom:5px}.field{margin-bottom:11px}.textarea{width:100%;height:100px;background:#0c1016;border:1px solid var(--line);border-radius:9px;color:#fff;padding:10px;resize:vertical}.empty{padding:30px;text-align:center;color:var(--muted);font-size:11px}
+@media(max-width:1050px){.g4{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}@media(max-width:760px){.side{display:none}.top{padding:0 14px}.content{padding:16px}.search{width:180px}.g3,.g4,.g2,.formrow{grid-template-columns:1fr}.head{flex-direction:column}.top-right .search{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="mark">T</div><div><b>TOMORROW</b><small>GYM OS · PERSONAL</small></div></div>
+  <div class="label">Meu trabalho</div>
+  <nav class="nav">
+    <button class="active" data-view="home">Visão geral</button>
+    <button data-view="students">Meus alunos</button>
+    <button data-view="training">Treino & evolução</button>
+    <button data-view="attendance">Presença</button>
+  </nav>
+  <div class="label">Inteligência</div>
+  <nav class="nav">
+    <button data-view="ai">IA Copiloto</button>
+    <button data-view="reports">Relatórios</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="account"><div class="account-row"><div class="avatar" id="avatar">RP</div><div><b id="userName">Rafael Personal</b><span>Personal trainer</span></div></div><button class="logout" onclick="logout()">Sair</button></div>
+</aside>
+<main class="main">
+<header class="top"><div class="crumb"><span id="academy">Vertex Fitness</span> › <b id="crumb">Visão geral</b></div><div class="top-right"><div class="search">⌕ <input id="globalSearch" placeholder="Buscar meus alunos..." oninput="quickFilter(this.value)"></div><div class="avatar" id="topAvatar">RP</div></div></header>
+<section class="content">
+<div class="view active" id="view-home">
+  <div class="head"><div><div class="kicker">Seu turno</div><h1>Bom trabalho, <span id="firstName">Rafael</span>.</h1><p>Você não precisa acompanhar a academia inteira. Aqui está o que exige sua atenção hoje.</p></div><div class="actions"><button class="btn" onclick="navigate('ai')">✦ Perguntar à IA</button><button class="btn primary" onclick="navigate('students')">Meus alunos</button></div></div>
+  <div class="grid g3" style="margin-bottom:14px"><div class="card stat"><small>Meus alunos</small><strong id="myStudents">—</strong><span class="delta">carteira atual</span></div><div class="card stat"><small>Precisam de atenção</small><strong id="myRisk">—</strong><span class="delta" style="color:var(--yellow)">revisar hoje</span></div><div class="card stat"><small>Check-ins dos meus alunos</small><strong id="myCheckins">—</strong><span class="delta">últimos 7 dias</span></div></div>
+  <div class="split"><div class="card pad"><div class="title"><h3>Prioridades</h3><span>geradas pelo contexto da sua carteira</span></div><div class="list" id="priorities"></div></div><div class="card pad"><div class="title"><h3>Resumo do dia</h3><span>sem dados administrativos</span></div><div class="notice">A visão do personal é deliberadamente limitada aos alunos sob sua responsabilidade. Dados financeiros, campanhas e indicadores globais ficam fora deste acesso.</div><div style="margin-top:12px"><div class="item"><span class="badge purple">TREINO</span><div class="itemmain"><b>24 progressões em análise</b><span>Revise as sugestões antes de aplicar.</span></div></div><div class="item"><span class="badge blue">PRESENÇA</span><div class="itemmain"><b>3 alunos abaixo da frequência planejada</b><span>Veja quem precisa de contato.</span></div></div></div></div></div>
+</div>
+<div class="view" id="view-students">
+  <div class="head"><div><div class="kicker">Carteira</div><h1>Meus alunos</h1><p>Somente alunos atribuídos a você.</p></div></div>
+  <div class="card"><div style="padding:12px"><input id="studentFilter" class="input" placeholder="Filtrar por nome, objetivo ou status..." oninput="renderStudents()"></div><div style="overflow:auto"><table class="table"><thead><tr><th>Aluno</th><th>Status</th><th>Objetivo</th><th>Frequência</th><th>Último treino</th><th>Evolução</th><th></th></tr></thead><tbody id="studentsBody"></tbody></table></div></div>
+</div>
+<div class="view" id="view-training">
+  <div class="head"><div><div class="kicker">Training Engine</div><h1>Treino & evolução</h1><p>Abra um aluno para analisar o plano e o histórico registrado.</p></div><div class="actions"><select class="select" id="trainingStudent" onchange="loadTraining()"></select></div></div>
+  <div class="split"><div class="card pad"><div class="title"><h3 id="planName">Selecione um aluno</h3><span id="planMeta">—</span></div><div id="exercises" class="empty">Escolha um aluno acima.</div></div><div class="card pad"><div class="title"><h3>Histórico recente</h3><span>últimas sessões registradas</span></div><div id="logs" class="list"></div></div></div>
+</div>
+<div class="view" id="view-attendance">
+  <div class="head"><div><div class="kicker">Comportamento</div><h1>Presença dos meus alunos</h1><p>Use a frequência para decidir quem precisa de atenção.</p></div><button class="btn primary" onclick="openCheckin()">＋ Registrar check-in</button></div>
+  <div class="grid g2"><div class="card pad"><div class="title"><h3>Alunos</h3><span>último status</span></div><div id="attendanceList" class="list"></div></div><div class="card pad"><div class="title"><h3>Como usar este dado</h3><span>contexto</span></div><div class="notice">Aqui você vê a frequência dos seus alunos porque isso interfere diretamente no seu trabalho. O aluno, por outro lado, recebe uma recomendação de horário — não a taxa bruta de ocupação da academia.</div></div></div>
+</div>
+<div class="view" id="view-ai">
+  <div class="head"><div><div class="kicker">Copiloto profissional</div><h1>IA Copiloto</h1><p>Contexto limitado à sua carteira, treinos e presença.</p></div></div>
+  <div class="split"><div class="card pad"><div class="title"><h3>Ações</h3><span>rápidas</span></div><div class="list"><button class="btn" style="text-align:left;margin-bottom:8px" onclick="ask('Quais alunos meus precisam de atenção hoje?')">Quais alunos meus precisam de atenção hoje?</button><button class="btn" style="text-align:left;margin-bottom:8px" onclick="ask('Quais treinos têm sinais de plateau?')">Quais treinos têm sinais de plateau?</button><button class="btn" style="text-align:left" onclick="ask('Faça um resumo da minha carteira.')">Faça um resumo da minha carteira.</button></div></div><div class="card chat"><div class="messages" id="messages"><div class="msg ai">Sou o copiloto do seu trabalho. Meu contexto é restrito aos alunos que você atende, seus treinos e a presença deles.</div></div><div class="compose"><input class="input" id="aiInput" placeholder="Pergunte sobre sua carteira..." onkeydown="if(event.key==='Enter')sendAI()"><button class="btn primary" onclick="sendAI()">Enviar</button></div></div></div>
+</div>
+<div class="view" id="view-reports">
+  <div class="head"><div><div class="kicker">Relatórios</div><h1>Relatórios operacionais</h1><p>Informação para melhorar o trabalho do personal — sem números do negócio.</p></div></div>
+  <div class="grid g3"><div class="card pad"><div class="title"><h3>Carteira</h3><span>atual</span></div><div style="font-size:30px;font-weight:800" id="rStudents">—</div><div style="color:var(--muted);font-size:10px;margin-top:4px">alunos sob sua responsabilidade</div></div><div class="card pad"><div class="title"><h3>Adesão</h3><span>7 dias</span></div><div style="font-size:30px;font-weight:800">91%</div><div style="color:var(--muted);font-size:10px;margin-top:4px">treinos dentro do planejado</div></div><div class="card pad"><div class="title"><h3>Revisões</h3><span>pendentes</span></div><div style="font-size:30px;font-weight:800">8</div><div style="color:var(--muted);font-size:10px;margin-top:4px">sugestões de progressão</div></div></div>
+</div>
+</section></main></div>
+<div class="modalback" id="checkinModal"><div class="modal"><div class="modalhead"><b>Registrar check-in</b><button class="close" onclick="closeModal()">×</button></div><div class="modalbody"><div class="field"><label>Aluno</label><select id="checkinStudent" class="select" style="width:100%"></select></div><div class="notice">O registro ficará associado ao aluno e aparecerá no histórico de presença.</div></div><div class="modalfoot"><button class="btn" onclick="closeModal()">Cancelar</button><button class="btn primary" onclick="submitCheckin()">Registrar</button></div></div></div>
+<script>
+
+const $ = (id) => document.getElementById(id);
+let USER = null, MY_STUDENTS = [];
+
+async function api(path, opts = {}) {
+  const response = await fetch(path, {
+    headers: {'Content-Type':'application/json', ...(opts.headers || {})},
+    ...opts
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || `Erro ${response.status}`);
+  return data;
+}
+
+function bindNavigation() {
+  document.querySelectorAll('.nav button[data-view]').forEach((button) => {
+    button.onclick = (event) => {
+      event.preventDefault();
+      navigate(button.dataset.view);
+    };
+  });
+}
+
+document.addEventListener('click', (event) => {
+  const button = event.target.closest?.('.nav button[data-view]');
+  if (button) {
+    event.preventDefault();
+    navigate(button.dataset.view);
+  }
+});
+
+function navigate(viewName) {
+  const target = $(`view-${viewName}`);
+  if (!target) return toast('Essa área ainda não está disponível.');
+  document.querySelectorAll('.view').forEach((view) => view.classList.remove('active'));
+  target.classList.add('active');
+  document.querySelectorAll('.nav button[data-view]').forEach((button) => button.classList.toggle('active', button.dataset.view === viewName));
+  const activeButton = document.querySelector(`.nav button[data-view="${CSS.escape(viewName)}"]`);
+  if ($('crumb') && activeButton) $('crumb').textContent = activeButton.textContent.trim();
+  const content = document.querySelector('.content');
+  if (content) content.scrollTop = 0;
+  if (viewName === 'training') loadTraining().catch((error) => toast(error.message));
+  if (viewName === 'attendance') renderAttendance();
+}
+
+async function boot() {
+  bindNavigation();
+  try {
+    const me = await api('/api/me');
+    if (!me.authenticated || me.user.role !== 'personal') { location.href = '/app'; return; }
+    USER = me.user;
+    $('academy').textContent = USER.academy_name;
+    $('userName').textContent = USER.name;
+    $('firstName').textContent = USER.name.split(' ')[0] || USER.name;
+    const initialsValue = USER.name.split(' ').map((part) => part[0]).slice(0, 2).join('').toUpperCase();
+    $('avatar').textContent = initialsValue;
+    $('topAvatar').textContent = initialsValue;
+    await Promise.all([loadDash(), loadStudents()]);
+  } catch (error) {
+    console.error('Bootstrap error:', error);
+    toast('Não foi possível carregar os dados agora. O menu continua disponível.');
+  }
+}
+
+async function loadDash() {
+  const data = await api('/api/dashboard');
+  $('myStudents').textContent = data.my_students;
+  $('myRisk').textContent = data.my_students_risk;
+  $('myCheckins').textContent = data.my_checkins_7d;
+  $('rStudents').textContent = data.my_students;
+  const priorities = $('priorities');
+  priorities.innerHTML = '';
+  if (data.my_students_risk) {
+    priorities.insertAdjacentHTML('beforeend', `<div class="item"><span class="badge red">ATENÇÃO</span><div class="itemmain"><b>${data.my_students_risk} aluno(s) com sinais de risco</b><span>Abra “Meus alunos” para identificar queda de frequência.</span></div></div>`);
+  }
+  priorities.insertAdjacentHTML('beforeend', '<div class="item"><span class="badge purple">TREINO</span><div class="itemmain"><b>Revise progressões pendentes</b><span>As sugestões são propostas; a aprovação continua com você.</span></div></div>');
+}
+
+async function loadStudents() {
+  const data = await api('/api/students');
+  MY_STUDENTS = data.items || [];
+  renderStudents();
+  renderStudentSelects();
+}
+
+function renderStudents() {
+  const body = $('studentsBody');
+  if (!body) return;
+  const query = ($('studentFilter')?.value || '').toLowerCase();
+  const list = MY_STUDENTS.filter((student) => [student.name, student.objective, student.status, student.plan].join(' ').toLowerCase().includes(query));
+  body.innerHTML = list.map((student) => `
+    <tr><td><div class="person"><div class="avatar">${student.initials}</div><div><b>${student.name}</b><small>Aluno #${student.id}</small></div></div></td>
+    <td><span class="badge ${student.status==='Em risco'?'red':student.status==='Ativo'?'green':'yellow'}">${student.status}</span></td>
+    <td>${student.objective}</td><td>${String(student.frequency).replace('.',',')}x/sem</td><td>${student.last_training}</td>
+    <td><span class="badge ${student.status==='Em risco'?'red':'green'}">${student.evolution}</span></td>
+    <td><button class="btn" onclick="selectTraining(${student.id});navigate('training')">Treino</button></td></tr>
+  `).join('') || '<tr><td colspan="7"><div class="empty">Nenhum aluno encontrado.</div></td></tr>';
+}
+
+function renderStudentSelects() {
+  const trainingSelect = $('trainingStudent');
+  const checkinSelect = $('checkinStudent');
+  if (!trainingSelect || !checkinSelect) return;
+  const options = MY_STUDENTS.map((student) => `<option value="${student.id}">${student.name}</option>`).join('');
+  trainingSelect.innerHTML = options || '<option value="">Nenhum aluno</option>';
+  checkinSelect.innerHTML = options || '<option value="">Nenhum aluno</option>';
+}
+
+function selectTraining(id) {
+  const select = $('trainingStudent');
+  if (!select) return;
+  select.value = String(id);
+  loadTraining().catch((error) => toast(error.message));
+}
+
+async function loadTraining() {
+  const select = $('trainingStudent');
+  const studentId = select?.value;
+  if (!studentId) return;
+  const data = await api('/api/my/training?student_id=' + encodeURIComponent(studentId));
+  if (!data.plan) {
+    $('planName').textContent = 'Sem plano ativo';
+    $('planMeta').textContent = '—';
+    $('exercises').innerHTML = '<div class="empty">Este aluno ainda não possui um plano de treino.</div>';
+    $('logs').innerHTML = '';
+    return;
+  }
+  $('planName').textContent = data.plan.name;
+  $('planMeta').textContent = `${data.plan.objective} · ${data.plan.days_per_week}x/sem`;
+  $('exercises').innerHTML = data.exercises.map((exercise) => `
+    <div class="exercise"><div class="exicon">◈</div><div class="exmain"><b>${exercise.name}</b><span>${exercise.day_label} · ${exercise.rep_range} reps · RIR ${exercise.rir_target}</span></div><div class="exmeta"><b>${exercise.target_load || 0} kg</b><span>último ${exercise.last_load || 0} kg</span></div></div>
+  `).join('');
+  $('logs').innerHTML = data.logs.map((log) => `<div class="item"><span class="badge blue">${log.session_date}</span><div class="itemmain"><b>${log.exercise_name}</b><span>${log.load} kg · ${log.reps} reps · RIR ${log.rir}</span></div></div>`).join('') || '<div class="empty">Sem histórico.</div>';
+}
+
+function renderAttendance() {
+  const list = $('attendanceList');
+  if (!list) return;
+  list.innerHTML = MY_STUDENTS.map((student) => `<div class="item"><div class="avatar">${student.initials}</div><div class="itemmain"><b>${student.name}</b><span>${String(student.frequency).replace('.',',')}x/sem · último treino: ${student.last_training}</span></div><span class="badge ${student.status==='Em risco'?'red':'green'}">${student.status}</span></div>`).join('');
+}
+
+function openCheckin() { $('checkinModal').classList.add('show'); }
+function closeModal() { $('checkinModal').classList.remove('show'); }
+
+async function submitCheckin() {
+  const studentId = Number($('checkinStudent').value || 0);
+  if (!studentId) return toast('Selecione um aluno.');
+  try {
+    await api('/api/attendance/checkin', {method:'POST', body:JSON.stringify({student_id: studentId})});
+    closeModal();
+    toast('Check-in registrado.');
+    await loadStudents();
+    await loadDash();
+  } catch (error) { toast(error.message); }
+}
+
+function quickFilter(value) {
+  if (value.trim()) {
+    navigate('students');
+    $('studentFilter').value = value;
+    renderStudents();
+  }
+}
+
+function ask(text) {
+  const messages = $('messages');
+  messages.insertAdjacentHTML('beforeend', `<div class="msg me">${escapeHtml(text)}</div>`);
+  setTimeout(() => {
+    const lower = text.toLowerCase();
+    const answer = lower.includes('plateau')
+      ? 'Encontrei sinais de plateau em 2 alunos da sua carteira. Abra o histórico de treino antes de alterar volume ou carga.'
+      : lower.includes('resumo')
+      ? `Sua carteira tem ${MY_STUDENTS.length} alunos. O principal ponto de atenção é frequência; as sugestões de progressão ficam pendentes de sua revisão.`
+      : `Há ${MY_STUDENTS.filter((student) => student.status === 'Em risco').length} aluno(s) em risco na sua carteira. Comece pelos que combinaram queda de frequência com histórico alto de adesão.`;
+    messages.insertAdjacentHTML('beforeend', `<div class="msg ai">${answer}</div>`);
+    messages.scrollTop = messages.scrollHeight;
+  }, 350);
+}
+
+function sendAI() { const input = $('aiInput'); const value = input.value.trim(); if (value) ask(value); input.value = ''; }
+async function logout() { try { await api('/api/logout', {method:'POST'}); } finally { location.href = '/'; } }
+function toast(text) {
+  let element = $('toast');
+  if (!element) { element = document.createElement('div'); element.id='toast'; Object.assign(element.style,{position:'fixed',right:'20px',bottom:'20px',padding:'11px 13px',border:'1px solid rgba(255,255,255,.14)',borderRadius:'10px',background:'#151b25',fontSize:'11px',zIndex:100}); document.body.appendChild(element); }
+  element.textContent=text; element.style.display='block'; clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>element.style.display='none',2400);
+}
+function escapeHtml(value) { return value.replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char])); }
+
+boot();
+
+</script></body></html>

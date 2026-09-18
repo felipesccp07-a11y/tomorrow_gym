@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tomorrow Gym OS — Aluno</title>
+<style>
+:root{--bg:#090b10;--panel:#10151d;--panel2:#141a24;--line:rgba(255,255,255,.08);--text:#f4f7fb;--muted:#8e98a8;--accent:#7c5cff;--green:#63d9bd;--yellow:#ffcb66;--red:#ff6b7a;--blue:#68a7ff;--radius:19px}*{box-sizing:border-box}body{margin:0;height:100vh;overflow:hidden;background:radial-gradient(circle at 82% -12%,rgba(124,92,255,.16),transparent 31%),radial-gradient(circle at 12% 45%,rgba(93,224,192,.045),transparent 28%),#090b10;color:var(--text);font:13px Inter,system-ui,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{display:flex;height:100%}.side{width:248px;min-width:248px;height:100%;min-height:0;background:rgba(9,11,16,.92);border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable}.side::-webkit-scrollbar{width:7px}.side::-webkit-scrollbar-thumb{background:#242a35;border-radius:10px}.side::-webkit-scrollbar-track{background:transparent}.brand{display:flex;gap:10px;align-items:center;padding:3px 8px 26px}.mark{width:35px;height:35px;border-radius:11px;background:linear-gradient(135deg,#8f76ff,#5a39ef);display:grid;place-items:center;font-weight:900;box-shadow:0 8px 24px rgba(124,92,255,.3)}.brand b{font-size:13px}.brand small{display:block;color:#657080;font-size:9px;letter-spacing:.11em;text-transform:uppercase;margin-top:3px}.label{color:#5f6877;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;padding:10px}.nav{display:flex;flex-direction:column;gap:3px}.nav button{border:0;background:none;color:#aeb6c4;text-align:left;padding:10px 11px;border-radius:11px}.nav button:hover{background:rgba(255,255,255,.04);color:#fff}.nav button.active{background:rgba(124,92,255,.13);color:#fff}.spacer{flex:1}.account{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:14px;padding:11px}.account-row{display:flex;gap:9px;align-items:center}.avatar{width:35px;height:35px;border-radius:50%;background:linear-gradient(135deg,#29344a,#1a2130);display:grid;place-items:center;font-weight:800;font-size:11px}.account b{display:block;font-size:11px}.account span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.logout{width:100%;margin-top:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#aeb6c4;padding:8px;border-radius:9px;font-size:10px}.main{min-width:0;flex:1;display:flex;flex-direction:column}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px;background:rgba(9,11,16,.68);backdrop-filter:blur(16px)}.crumb{color:var(--muted);font-size:11px}.crumb b{color:#fff}.topright{display:flex;gap:8px;align-items:center}.status{display:flex;align-items:center;gap:6px;font-size:10px;color:#74e1b4}.status i{width:6px;height:6px;border-radius:50%;background:#55d49b}.content{padding:26px;overflow:auto;flex:1;min-height:0;min-width:0}.view{display:none;animation:in .18s ease}.view.active{display:block}@keyframes in{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:none}}.head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:20px}.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);font-weight:900;margin-bottom:7px}.head h1{margin:0;font-size:29px;letter-spacing:-.045em}.head p{margin:6px 0 0;color:var(--muted);font-size:12px}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,23,33,.95),rgba(13,17,24,.95));border-radius:var(--radius);overflow:hidden}.pad{padding:19px}.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.stat{padding:17px 18px}.stat span{display:block;color:var(--muted);font-size:10px}.stat strong{display:block;font-size:29px;letter-spacing:-.05em;margin:7px 0 4px}.accent{color:#baaaff}.green{color:#76e3b3}.muted{color:var(--muted)}.hero{padding:22px;min-height:190px;position:relative;background:radial-gradient(circle at 82% 20%,rgba(124,92,255,.18),transparent 29%),linear-gradient(135deg,rgba(124,92,255,.07),rgba(255,255,255,.02))}.hero h2{margin:0;font-size:22px;letter-spacing:-.04em}.hero p{max-width:640px;color:#a8b1be;line-height:1.55;font-size:11px;margin:8px 0 0}.hero-actions{display:flex;gap:8px;margin-top:17px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#dfe5ed;border-radius:10px;padding:9px 12px;font-size:11px;font-weight:800}.btn.primary{background:var(--accent);border-color:transparent;color:#fff}.btn.greenbtn{background:rgba(85,212,155,.1);border-color:rgba(85,212,155,.18);color:#78e4b2}.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.title h3{margin:0;font-size:13px}.title span{color:var(--muted);font-size:10px}.exercise{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:11px;margin-bottom:8px}.exicon{width:39px;height:39px;border-radius:10px;background:rgba(124,92,255,.11);color:#b19fff;display:grid;place-items:center}.exmain{flex:1}.exmain b{font-size:11px}.exmain span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.exmeta{text-align:right}.exmeta b{font-size:13px}.exmeta span{display:block;color:var(--muted);font-size:9px;margin-top:2px}.tip{padding:12px 13px;border-radius:11px;background:rgba(104,167,255,.055);border:1px solid rgba(104,167,255,.15);color:#a9c5ec;font-size:10px;line-height:1.55}.timeline{display:flex;flex-direction:column}.event{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)}.event:last-child{border:0}.date{width:71px;color:#7e8999;font-size:9px}.eventmain b{font-size:10px}.eventmain span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.metric{margin:9px 0}.metricrow{display:flex;justify-content:space-between;font-size:10px;margin-bottom:5px}.metricrow span{color:var(--muted)}.progress{height:7px;background:#212732;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#a98cff);border-radius:99px}.chat{height:460px;display:flex;flex-direction:column}.messages{flex:1;overflow:auto;padding:16px}.msg{max-width:80%;padding:10px 12px;border-radius:11px;margin-bottom:9px;font-size:10px;line-height:1.55}.msg.ai{background:#171d28;border:1px solid var(--line)}.msg.me{margin-left:auto;background:rgba(124,92,255,.17);border:1px solid rgba(124,92,255,.22)}.compose{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}.input{height:39px;background:#0c1016;border:1px solid var(--line);border-radius:9px;color:#fff;padding:0 10px;outline:0;font-size:10px}.compose .input{flex:1}.field label{display:block;color:#778293;text-transform:uppercase;letter-spacing:.1em;font-size:9px;font-weight:800;margin-bottom:6px}.field{margin-bottom:12px}.profilegrid{display:grid;grid-template-columns:.75fr 1.25fr;gap:14px}.profileline{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:10px}.profileline:last-child{border:0}.profileline b{display:block;font-size:9px;color:#788395;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}.empty{padding:30px;text-align:center;color:var(--muted);font-size:11px}@media(max-width:850px){.g3,.g2,.profilegrid{grid-template-columns:1fr}}@media(max-width:700px){.side{display:none}.content{padding:16px}.top{padding:0 14px}.head{flex-direction:column}}
+</style></head>
+<body>
+<div class="app"><aside class="side"><div class="brand"><div class="mark">T</div><div><b>TOMORROW</b><small>GYM OS · ALUNO</small></div></div><div class="label">Minha jornada</div><nav class="nav"><button class="active" data-view="home">Início</button><button data-view="training">Meu treino</button><button data-view="evolution">Minha evolução</button><button data-view="attendance">Minha frequência</button></nav><div class="label">Assistência</div><nav class="nav"><button data-view="ai">IA Copiloto</button><button data-view="profile">Meu perfil</button></nav><div class="spacer"></div><div class="account"><div class="account-row"><div class="avatar" id="avatar">RM</div><div><b id="userName">Rafael Mendes</b><span>Aluno</span></div></div><button class="logout" onclick="logout()">Sair</button></div></aside>
+<main class="main"><header class="top"><div class="crumb"><span id="academy">Vertex Fitness</span> › <b id="crumb">Início</b></div><div class="topright"><div class="status"><i></i> Tudo certo</div><div class="avatar" id="topAvatar">RM</div></div></header><section class="content">
+<div class="view active" id="view-home"><div class="head"><div><div class="kicker">Seu painel</div><h1>Olá, <span id="firstName">Rafael</span>.</h1><p>Seu sistema mostra o que é relevante para o seu treino — não os bastidores da academia.</p></div></div>
+<div class="card hero" style="margin-bottom:14px"><div class="kicker">Próximo treino</div><h2 id="heroWorkout">Treino A · Hipertrofia</h2><p id="heroWorkoutMeta">4 movimentos principais · progressão atualizada com base no seu histórico.</p><div class="hero-actions"><button class="btn primary" onclick="navigate('training')">Começar / ver treino</button><button class="btn greenbtn" onclick="toast(scheduleTip)">Ver melhor horário hoje</button></div></div>
+<div class="grid g3" style="margin-bottom:14px"><div class="card stat"><span>Treinos esta semana</span><strong id="weekTrainings">3</strong><small class="green">meta: 4</small></div><div class="card stat"><span>Frequência 30 dias</span><strong id="checkins">—</strong><small class="green">sessões registradas</small></div><div class="card stat"><span>Evolução</span><strong class="accent" id="evolution">+8,4%</strong><small class="muted">comparativo do seu histórico</small></div></div>
+<div class="grid g2"><div class="card pad"><div class="title"><h3>Hoje</h3><span>recomendação pessoal</span></div><div class="tip" id="scheduleBox">Hoje pode valer a pena treinar entre 14h e 16h: costuma ser um período mais tranquilo.</div><div class="event"><div class="date">OBJETIVO</div><div class="eventmain"><b id="objective">Hipertrofia</b><span>Seu planejamento atual.</span></div></div><div class="event"><div class="date">ÚLTIMO</div><div class="eventmain"><b id="lastTraining">Hoje</b><span>Seu último registro de treino.</span></div></div></div><div class="card pad"><div class="title"><h3>Seu progresso</h3><span>últimas cargas</span></div><div id="progressMetrics"></div></div></div></div>
+<div class="view" id="view-training"><div class="head"><div><div class="kicker">Training Engine</div><h1>Meu treino</h1><p>Exercícios, parâmetros atuais e a proposta de progressão.</p></div><button class="btn primary" onclick="toast('Treino iniciado no modo demonstração.')">▶ Iniciar treino</button></div><div class="grid g2"><div class="card pad"><div class="title"><h3 id="planName">—</h3><span id="planMeta">—</span></div><div id="exercises"></div></div><div class="card pad"><div class="title"><h3>Últimas sessões</h3><span>histórico</span></div><div class="timeline" id="logs"></div></div></div></div>
+<div class="view" id="view-evolution"><div class="head"><div><div class="kicker">Seu histórico</div><h1>Minha evolução</h1><p>O que você fez, como respondeu e onde a progressão está acontecendo.</p></div></div><div class="grid g3" style="margin-bottom:14px"><div class="card stat"><span>Supino</span><strong>72,5 kg</strong><small class="green">+5 kg no ciclo</small></div><div class="card stat"><span>Remada</span><strong>62,5 kg</strong><small class="green">+5 kg no ciclo</small></div><div class="card stat"><span>Agachamento</span><strong>92,5 kg</strong><small class="yellow">revisar fadiga</small></div></div><div class="card pad"><div class="title"><h3>Leitura do sistema</h3><span>explicável</span></div><div class="tip">Você atingiu o topo da faixa em alguns movimentos. A próxima sessão pode usar pequena progressão de carga onde o desempenho permaneceu estável. Essa proposta não substitui a orientação do seu profissional.</div></div></div>
+<div class="view" id="view-attendance"><div class="head"><div><div class="kicker">Consistência</div><h1>Minha frequência</h1><p>Seu histórico e uma recomendação de horário. Sem indicadores internos da academia.</p></div></div><div class="grid g2"><div class="card pad"><div class="title"><h3>Últimos check-ins</h3><span>seus dados</span></div><div id="attendanceTimeline" class="timeline"></div></div><div class="card pad"><div class="title"><h3>Hoje</h3><span>orientação</span></div><div class="tip" id="scheduleTipCard">—</div><div class="metric" style="margin-top:17px"><div class="metricrow"><span>Meta semanal</span><b>4 treinos</b></div><div class="progress"><i style="width:75%"></i></div></div></div></div></div>
+<div class="view" id="view-ai"><div class="head"><div><div class="kicker">Assistente pessoal</div><h1>IA Copiloto</h1><p>O contexto dela é você: treino, histórico, frequência e metas.</p></div></div><div class="grid g2"><div class="card pad"><div class="title"><h3>Perguntas rápidas</h3><span>pode perguntar também por texto</span></div><div style="display:grid;gap:8px"><button class="btn" style="text-align:left" onclick="ask('O que mudou no meu treino?')">O que mudou no meu treino?</button><button class="btn" style="text-align:left" onclick="ask('Onde estou evoluindo mais?')">Onde estou evoluindo mais?</button><button class="btn" style="text-align:left" onclick="ask('Qual o melhor horário para eu treinar hoje?')">Qual o melhor horário para eu treinar hoje?</button></div></div><div class="card chat"><div class="messages" id="messages"><div class="msg ai">Posso explicar seu treino, resumir seu histórico e ajudar com consistência. Não tenho acesso aos números internos da academia.</div></div><div class="compose"><input class="input" id="aiInput" placeholder="Pergunte sobre seu treino..." onkeydown="if(event.key==='Enter')sendAI()"><button class="btn primary" onclick="sendAI()">Enviar</button></div></div></div></div>
+<div class="view" id="view-profile"><div class="head"><div><div class="kicker">Conta</div><h1>Meu perfil</h1><p>Somente seus dados pessoais.</p></div></div><div class="profilegrid"><div class="card pad"><div class="title"><h3>Resumo</h3><span>privado</span></div><div class="profileline"><b>Nome</b><span id="profileName">—</span></div><div class="profileline"><b>E-mail</b><span id="profileEmail">—</span></div><div class="profileline"><b>Objetivo</b><span id="profileObjective">—</span></div><div class="profileline"><b>Plano</b><span id="profilePlan">—</span></div></div><div class="card pad"><div class="title"><h3>Editar nome</h3><span>somente você</span></div><input id="newName" class="input" style="width:100%;margin-bottom:10px"><button class="btn primary" onclick="saveName()">Salvar</button></div></div></div>
+</section></main></div><script>
+
+const $ = (id) => document.getElementById(id);
+let USER = null, STUDENT = null, TRAINING = null;
+let scheduleTip = 'Hoje pode valer a pena treinar entre 14h e 16h: costuma ser um período mais tranquilo.';
+
+async function api(path, opts = {}) {
+  const response = await fetch(path, {
+    headers: {'Content-Type': 'application/json', ...(opts.headers || {})},
+    ...opts
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || `Erro ${response.status}`);
+  return data;
+}
+
+function bindNavigation() {
+  document.querySelectorAll('.nav button[data-view]').forEach((button) => {
+    button.onclick = (event) => {
+      event.preventDefault();
+      navigate(button.dataset.view);
+    };
+  });
+}
+
+// Delegação de eventos: o menu continua clicável mesmo que a inicialização da API falhe.
+document.addEventListener('click', (event) => {
+  const button = event.target.closest?.('.nav button[data-view]');
+  if (button) {
+    event.preventDefault();
+    navigate(button.dataset.view);
+  }
+});
+
+function navigate(viewName) {
+  const target = $(`view-${viewName}`);
+  if (!target) return toast('Essa área ainda não está disponível.');
+  document.querySelectorAll('.view').forEach((view) => view.classList.remove('active'));
+  target.classList.add('active');
+  document.querySelectorAll('.nav button[data-view]').forEach((button) => {
+    button.classList.toggle('active', button.dataset.view === viewName);
+  });
+  const activeButton = document.querySelector(`.nav button[data-view="${CSS.escape(viewName)}"]`);
+  if ($('crumb') && activeButton) $('crumb').textContent = activeButton.textContent.trim();
+  const content = document.querySelector('.content');
+  if (content) content.scrollTop = 0;
+}
+
+async function boot() {
+  bindNavigation();
+  try {
+    const me = await api('/api/me');
+    if (!me.authenticated || me.user.role !== 'student') {
+      location.href = '/app';
+      return;
+    }
+    USER = me.user;
+    $('academy').textContent = USER.academy_name;
+    $('userName').textContent = USER.name;
+    $('firstName').textContent = USER.name.split(' ')[0] || USER.name;
+    const initialsValue = USER.name.split(' ').map((part) => part[0]).slice(0, 2).join('').toUpperCase();
+    $('avatar').textContent = initialsValue;
+    $('topAvatar').textContent = initialsValue;
+    $('profileName').textContent = USER.name;
+    $('profileEmail').textContent = USER.email;
+    $('newName').value = USER.name;
+    await Promise.all([loadDash(), loadTraining(), loadAttendance()]);
+  } catch (error) {
+    console.error('Bootstrap error:', error);
+    toast('Não foi possível carregar os dados agora. O menu continua disponível.');
+  }
+}
+
+async function loadDash() {
+  const data = await api('/api/dashboard');
+  STUDENT = data.student;
+  $('checkins').textContent = data.checkins_30d;
+  $('objective').textContent = STUDENT.objective;
+  $('lastTraining').textContent = STUDENT.last_training;
+  $('evolution').textContent = STUDENT.evolution || '—';
+  scheduleTip = data.schedule_tip || scheduleTip;
+  $('scheduleBox').textContent = scheduleTip;
+  $('scheduleTipCard').textContent = scheduleTip;
+  $('profileObjective').textContent = STUDENT.objective;
+  $('profilePlan').textContent = STUDENT.plan || '—';
+}
+
+async function loadTraining() {
+  const data = await api('/api/my/training');
+  TRAINING = data;
+  if (!data.plan) {
+    $('planName').textContent = 'Sem plano ativo';
+    $('planMeta').textContent = '—';
+    $('exercises').innerHTML = '<div class="empty">Seu plano de treino ainda não foi configurado.</div>';
+    $('logs').innerHTML = '';
+    $('progressMetrics').innerHTML = '';
+    return;
+  }
+  $('heroWorkout').textContent = data.plan.name;
+  $('heroWorkoutMeta').textContent = `${data.exercises.length} movimentos principais · progressão atualizada com base no seu histórico.`;
+  $('planName').textContent = data.plan.name;
+  $('planMeta').textContent = `${data.plan.objective} · ${data.plan.days_per_week}x/sem`;
+  $('exercises').innerHTML = data.exercises.map((exercise) => `
+    <div class="exercise"><div class="exicon">◈</div><div class="exmain"><b>${exercise.name}</b><span>${exercise.day_label} · ${exercise.sets} séries · ${exercise.rep_range} reps · RIR ${exercise.rir_target}</span></div><div class="exmeta"><b>${exercise.target_load || 0} kg</b><span>último ${exercise.last_load || 0} kg</span></div></div>
+  `).join('');
+  $('logs').innerHTML = data.logs.slice(0, 10).map((log) => `
+    <div class="event"><div class="date">${log.session_date}</div><div class="eventmain"><b>${log.exercise_name}</b><span>${log.load} kg · ${log.reps} reps · RIR ${log.rir}</span></div></div>
+  `).join('') || '<div class="empty">Ainda não há sessões registradas.</div>';
+  $('progressMetrics').innerHTML = data.exercises.slice(0, 4).map((exercise) => {
+    const target = Number(exercise.target_load) || 1;
+    const last = Number(exercise.last_load) || 1;
+    const width = Math.min(100, Math.max(12, (target / Math.max(target, last)) * 100));
+    return `<div class="metric"><div class="metricrow"><span>${exercise.name}</span><b>${exercise.target_load || 0} kg</b></div><div class="progress"><i style="width:${width}%"></i></div></div>`;
+  }).join('');
+}
+
+async function loadAttendance() {
+  const data = await api('/api/my/attendance');
+  $('attendanceTimeline').innerHTML = data.items.map((item) => `
+    <div class="event"><div class="date">${item.checkin_at.slice(0,10)}</div><div class="eventmain"><b>Check-in registrado</b><span>${item.checkin_at.slice(11,16)} · treino presencial</span></div></div>
+  `).join('') || '<div class="empty">Ainda não há check-ins registrados.</div>';
+}
+
+function ask(text) {
+  const messages = $('messages');
+  messages.insertAdjacentHTML('beforeend', `<div class="msg me">${escapeHtml(text)}</div>`);
+  let answer = 'Posso explicar isso usando seu treino e histórico.';
+  const lower = text.toLowerCase();
+  if (lower.includes('horário')) answer = scheduleTip;
+  else if (lower.includes('mudou')) answer = 'Sua progressão atual aumentou carga em supino e remada; no agachamento o sistema marcou revisão de fadiga. Veja os números na tela de treino.';
+  else if (lower.includes('evoluindo')) answer = 'Seu maior avanço recente aparece em movimentos de empurrar e puxar. A leitura deve considerar carga, repetições e consistência, não apenas peso.';
+  setTimeout(() => {
+    messages.insertAdjacentHTML('beforeend', `<div class="msg ai">${answer}</div>`);
+    messages.scrollTop = messages.scrollHeight;
+  }, 300);
+}
+
+function sendAI() {
+  const input = $('aiInput');
+  const value = input.value.trim();
+  if (!value) return;
+  ask(value);
+  input.value = '';
+}
+
+async function saveName() {
+  const name = $('newName').value.trim();
+  if (!name) return;
+  try {
+    await api('/api/my/profile', {method: 'PUT', body: JSON.stringify({name})});
+    USER.name = name;
+    $('userName').textContent = name;
+    $('firstName').textContent = name.split(' ')[0];
+    $('profileName').textContent = name;
+    $('avatar').textContent = name.split(' ').map((part) => part[0]).slice(0, 2).join('').toUpperCase();
+    $('topAvatar').textContent = $('avatar').textContent;
+    toast('Nome atualizado.');
+  } catch (error) { toast(error.message); }
+}
+
+async function logout() {
+  try { await api('/api/logout', {method: 'POST'}); } finally { location.href = '/'; }
+}
+
+function toast(text) {
+  let element = $('toast');
+  if (!element) {
+    element = document.createElement('div');
+    element.id = 'toast';
+    Object.assign(element.style, {position:'fixed',right:'20px',bottom:'20px',padding:'11px 13px',border:'1px solid rgba(255,255,255,.14)',borderRadius:'10px',background:'#151b25',fontSize:'11px',zIndex:100});
+    document.body.appendChild(element);
+  }
+  element.textContent = text;
+  element.style.display = 'block';
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => element.style.display = 'none', 2400);
+}
+
+function escapeHtml(value) {
+  return value.replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+boot();
+
+</script></body></html>
